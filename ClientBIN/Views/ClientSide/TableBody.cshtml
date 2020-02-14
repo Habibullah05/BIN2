@@ -1,0 +1,8 @@
+﻿@using ClientBIN.Models
+@model IEnumerable<BIN>
+
+
+@foreach (var item in Model)
+{
+    <partial name="Element" model="item" />
+}

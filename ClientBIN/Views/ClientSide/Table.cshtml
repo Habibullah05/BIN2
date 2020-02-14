@@ -1,0 +1,46 @@
+﻿@using ClientBIN.Models
+@model IEnumerable<BIN>
+
+
+
+
+
+
+
+<form asp-controller="ClientSide" asp-action="Table" method="post">
+    <div class="form-group">
+        <input type="number" name="pan" value="pan" size="19" maxlength="19" max="9999999999999999999" class="form-control">
+        <button type="submit" class="btn btn-primary">Submit</button>
+    </div>
+</form>
+
+
+<table class="table mt-2" id="table">
+    <thead>
+        <tr>
+            <th class="nwrap">PS</th>
+            <th class="nwrap">START BIN</th>
+            <th class="nwrap">END BIN</th>
+            <th class="nwrap">CODE A2</th>
+            <th class="nwrap">CODE A3</th>
+            <th class="nwrap">CODE N3</th>
+            <th class="nwrap">BIN LEN</th>
+            <th class="nwrap">Product ID</th>
+        </tr>
+    </thead>
+    <tbody id="urlsTable" class="">
+        @if (@Model!=null)
+        {
+        <partial name="TableBody" model="@Model" />
+        }
+    </tbody>
+</table>
+
+
+@section Scripts
+{
+    <partial name="_ValidationScriptsPartial" />
+}
+
+
+
